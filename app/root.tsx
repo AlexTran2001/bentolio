@@ -1,16 +1,11 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
-import '@fontsource/playfair-display';
-import '@fontsource/lato';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import "@fontsource/playfair-display";
+import "@fontsource/lato";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
 import ErrorPage from "./error/error";
 import LayoutComponent from "./components/layout";
+import { Color } from "./components/color";
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -20,7 +15,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style={{ backgroundColor: Color.white, margin: 0, padding: 0 }}>
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -30,16 +25,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return (<ThemeProvider theme={theme}>
-    <CssBaseline />
-    <LayoutComponent />
-    <Outlet />
-  </ThemeProvider>);
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <LayoutComponent>
+        <Outlet />
+      </LayoutComponent>
+    </ThemeProvider>
+  );
 }
 
 export function ErrorBoundary() {
-
-
   return (
     <>
       <Layout>
