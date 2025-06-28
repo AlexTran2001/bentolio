@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { Color } from "./color";
 import Header from "./header";
 
@@ -7,15 +7,16 @@ type LayoutComponentProps = {
 };
 
 export default function Layout({ children }: LayoutComponentProps) {
+  const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <Box
       width={"100%"}
       maxWidth={"1440px"}
       margin={"0 auto"}
-      height="100vh"
-      padding="20px"
+      height={isMobile ? "auto" : "100vh"}
+      padding={isMobile ? "10px" : "20px"}
       box-sizing="border-box"
-      sx={{ backgroundColor: Color.white }}
+      sx={{ backgroundColor: Color.gray50 }}
     >
       <Header />
 
