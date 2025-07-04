@@ -20,7 +20,7 @@ export default function Header() {
     <Box
       width={"100%"}
       height="100px"
-      bgcolor={Color.black}
+      bgcolor={Color.white}
       borderRadius={isMobile ? "10px " : "20px"}
       padding={"0 25px"}
       boxSizing="border-box"
@@ -33,24 +33,24 @@ export default function Header() {
       <Typography
         variant="h1"
         fontStyle="oblique"
-        sx={{ fontSize: "24px", fontWeight: "light", color: Color.gray100 }}
+        sx={{ fontSize: "24px", fontWeight: "light", color: Color.black }}
       >
         Trần Việt Anh
       </Typography>
       <Box sx={{ display: isMobile ? "none" : "flex", gap: "50px" }}>
-        <Link href="/projects" color={Color.gray100}>
+        <Link href="/projects" color={Color.black}>
           Các dự án
         </Link>
-        <Link href="/about-me" color={Color.gray100}>
+        <Link href="/about-me" color={Color.black}>
           Về tôi
         </Link>
-        <Link href="/contact" color={Color.gray100}>
+        <Link href="/contact" color={Color.black}>
           Liên hệ
         </Link>
       </Box>
 
       <Box sx={{ display: isMobile ? "flex" : "none" }}>
-        <MenuIcon sx={{ color: Color.gray100, fontSize: "30px" }} />
+        <MenuIcon sx={{ color: Color.white, fontSize: "30px" }} />
       </Box>
 
       <Box
@@ -61,7 +61,7 @@ export default function Header() {
         }}
       >
         <IconButton onClick={() => setOpen(true)}>
-          <MenuIcon sx={{ color: Color.gray100, fontSize: "30px" }} />
+          <MenuIcon sx={{ color: Color.black, fontSize: "30px" }} />
         </IconButton>
       </Box>
       <Drawer
@@ -72,7 +72,7 @@ export default function Header() {
           sx: {
             width: "100%",
             height: "100vh",
-            bgcolor: Color.gray100,
+            bgcolor: Color.white,
             borderRadius: 0,
           },
         }}

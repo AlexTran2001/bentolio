@@ -9,7 +9,7 @@ export function Homepage() {
   const isMobile = useMediaQuery("(max-width: 900px)");
   const bento = {
     borderRadius: isMobile ? "10px" : "20px",
-    bgcolor: Color.gray300,
+    bgcolor: Color.white,
     boxSizing: "border-box",
     padding: "20px 20px",
     animation: "fadeInUp 1s ease",
@@ -134,7 +134,6 @@ export function Homepage() {
               minHeight={"320px"}
               sx={{
                 ...bento,
-                bgcolor: `${Color.black} !important`,
                 cursor: "pointer",
                 transition: "box-shadow 0.3s",
                 "&:hover .rotate-icon": {
@@ -148,19 +147,19 @@ export function Homepage() {
                 display={"flex"}
                 justifyContent={"space-between"}
               >
-                <Typography fontSize={"15px"} color={Color.gray100}>
+                <Typography fontSize={"15px"} color={Color.black}>
                   Đặt câu hỏi cho tôi
                 </Typography>
 
                 <ArrowOutwardIcon
-                  sx={{ color: Color.gray100 }}
+                  sx={{ color: Color.black }}
                   className="rotate-icon"
                 />
               </Box>
               <Typography
                 variant="body1"
                 fontSize={isMobile ? "40px" : "55px"}
-                color={Color.gray100}
+                color={Color.black}
               >
                 Liên hệ với tôi
               </Typography>
