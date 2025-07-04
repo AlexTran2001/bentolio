@@ -16,7 +16,6 @@ export default function Layout({ children }: LayoutComponentProps) {
       height={isMobile ? "auto" : "100vh"}
       padding={isMobile ? "10px" : "20px"}
       box-sizing="border-box"
-      sx={{ backgroundColor: Color.gray50 }}
     >
       <Header />
 

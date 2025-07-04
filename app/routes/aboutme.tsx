@@ -1,6 +1,5 @@
 import type { Route } from "./+types/home";
-import { Homepage } from "~/homepage/homepage";
-
+import { AboutMe } from "~/aboutme/aboutme";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Alex Tran" },
@@ -9,5 +8,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Homepage />;
+  return <AboutMe />;
 }

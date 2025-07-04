@@ -30,23 +30,19 @@ export default function Header() {
         justifyContent: "space-between",
       }}
     >
-      <Typography
-        variant="h1"
-        fontStyle="oblique"
-        sx={{ fontSize: "24px", fontWeight: "light", color: Color.black }}
-      >
-        Trần Việt Anh
-      </Typography>
+      <Link href="/">
+        <Typography
+          variant="h1"
+          fontStyle="oblique"
+          sx={{ fontSize: "24px", fontWeight: "light" }}
+        >
+          Trần Việt Anh
+        </Typography>
+      </Link>
       <Box sx={{ display: isMobile ? "none" : "flex", gap: "50px" }}>
-        <Link href="/projects" color={Color.black}>
-          Các dự án
-        </Link>
-        <Link href="/about-me" color={Color.black}>
-          Về tôi
-        </Link>
-        <Link href="/contact" color={Color.black}>
-          Liên hệ
-        </Link>
+        <Link href="/projects">Các dự án</Link>
+        <Link href="/about-me">Về tôi</Link>
+        <Link href="/contact">Liên hệ</Link>
       </Box>
 
       <Box sx={{ display: isMobile ? "flex" : "none" }}>
@@ -60,9 +56,7 @@ export default function Header() {
           right: 30,
         }}
       >
-        <IconButton onClick={() => setOpen(true)}>
-          <MenuIcon sx={{ color: Color.black, fontSize: "30px" }} />
-        </IconButton>
+        <MenuIcon onClick={() => setOpen(true)} />
       </Box>
       <Drawer
         anchor="right"
@@ -79,7 +73,7 @@ export default function Header() {
       >
         <Box sx={{ display: "flex", justifyContent: "flex-end", p: 2 }}>
           <IconButton onClick={() => setOpen(false)}>
-            <CloseIcon sx={{ color: Color.black, fontSize: "30px" }} />
+            <CloseIcon />
           </IconButton>
         </Box>
 
@@ -90,16 +84,16 @@ export default function Header() {
           alignItems={"center"}
           mt={10}
         >
-          <Link href="/projects" color={Color.black} textAlign={"center"}>
+          <Link href="/projects" textAlign={"center"}>
             Các dự án
           </Link>
 
           <Divider sx={{ width: "90%" }} />
-          <Link href="/about-me" color={Color.black} textAlign={"center"}>
+          <Link href="/about-me" textAlign={"center"}>
             Về tôi
           </Link>
           <Divider sx={{ width: "90%" }} />
-          <Link href="/contact" color={Color.black} textAlign={"center"}>
+          <Link href="/contact" textAlign={"center"}>
             Liên hệ
           </Link>
           <img

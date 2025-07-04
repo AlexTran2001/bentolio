@@ -5,7 +5,6 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
 import ErrorPage from "./error/error";
 import LayoutComponent from "./components/layout";
-import { Color } from "./components/color";
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -15,7 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body style={{ backgroundColor: Color.black, margin: 0, padding: 0 }}>
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -38,9 +37,10 @@ export default function App() {
 export function ErrorBoundary() {
   return (
     <>
-      <Layout>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <ErrorPage />
-      </Layout>
+      </ThemeProvider>
     </>
   );
 }

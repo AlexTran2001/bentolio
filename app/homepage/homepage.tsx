@@ -151,10 +151,7 @@ export function Homepage() {
                   Đặt câu hỏi cho tôi
                 </Typography>
 
-                <ArrowOutwardIcon
-                  sx={{ color: Color.black }}
-                  className="rotate-icon"
-                />
+                <ArrowOutwardIcon className="rotate-icon" />
               </Box>
               <Typography
                 variant="body1"
