@@ -28,6 +28,21 @@ export default function Header() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        transition: "transform 0.2s cubic-bezier(.34,1.56,.64,1)",
+        animation: "fadeInDown 0.7s ease",
+        "&:hover": {
+          transform: "translateY(-8px)",
+        },
+        "@keyframes fadeInDown": {
+          from: {
+            opacity: 0,
+            transform: "translate3d(0, -40px, 0)",
+          },
+          to: {
+            opacity: 1,
+            transform: "none",
+          },
+        },
       }}
     >
       <Link href="/">

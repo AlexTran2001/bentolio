@@ -1,5 +1,4 @@
 import { Box, useMediaQuery } from "@mui/material";
-import { Color } from "./color";
 import Header from "./header";
 
 type LayoutComponentProps = {

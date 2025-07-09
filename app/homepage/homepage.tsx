@@ -5,7 +5,13 @@ import logo from "~/assets/logo.gif";
 import face from "~/assets/face.png";
 import gif2 from "~/assets/gif2.gif";
 import cafe from "~/assets/cafee.gif";
+import ContactModal from "~/components/modalContact";
+import React from "react";
 export function Homepage() {
+  const [open, setOpenContactModal] = React.useState(false);
+  const handleOpenContactModal = () => setOpenContactModal(true);
+  const handleCloseContactModal = () => setOpenContactModal(false);
+
   const isMobile = useMediaQuery("(max-width: 900px)");
   const bento = {
     borderRadius: isMobile ? "10px" : "20px",
@@ -13,6 +19,7 @@ export function Homepage() {
     boxSizing: "border-box",
     padding: "20px 20px",
     animation: "fadeInUp 1s ease",
+    cursor: "pointer",
     "@keyframes fadeInUp": {
       from: {
         opacity: 0,
@@ -22,6 +29,10 @@ export function Homepage() {
         opacity: 1,
         transform: "none",
       },
+    },
+    transition: "transform 0.2s cubic-bezier(.34,1.56,.64,1)",
+    "&:hover": {
+      transform: "translateY(-8px)",
     },
   };
 
@@ -134,22 +145,20 @@ export function Homepage() {
               minHeight={"320px"}
               sx={{
                 ...bento,
-                cursor: "pointer",
-                transition: "box-shadow 0.3s",
                 "&:hover .rotate-icon": {
                   transform: "rotate(360deg)",
                   transition: "transform 0.5s",
                 },
               }}
+              onClick={handleOpenContactModal}
             >
               <Box
                 width={"100%"}
                 display={"flex"}
                 justifyContent={"space-between"}
+                color={Color.black}
               >
-                <Typography fontSize={"15px"} color={Color.black}>
-                  Đặt câu hỏi cho tôi
-                </Typography>
+                <Typography fontSize={"15px"}>Đặt câu hỏi cho tôi</Typography>
 
                 <ArrowOutwardIcon className="rotate-icon" />
               </Box>
@@ -182,9 +191,10 @@ export function Homepage() {
               width={"100%"}
               display={"flex"}
               justifyContent={"space-between"}
+              color={Color.black}
             >
-              <Typography variant="body1" fontSize={"25px"} color={Color.black}>
-                Học BA
+              <Typography variant="body1" fontSize={"25px"}>
+                mình thích viết
               </Typography>
 
               <ArrowOutwardIcon />
@@ -195,13 +205,10 @@ export function Homepage() {
               width="100%"
               style={{ borderRadius: "20px" }}
             />
-            <Typography variant="body1" fontSize={"25px"} color={Color.black}>
-              Học Tarot
-            </Typography>
 
             <Divider />
             <Typography variant="body1" fontSize={"25px"} color={Color.black}>
-              Học Automation test
+              về ngành Business Analyst
             </Typography>
           </Box>
           <Box
@@ -212,12 +219,32 @@ export function Homepage() {
             alignItems={"center"}
             justifyContent={"space-evenly"}
           >
-            <Link>Github</Link>
-            <Link>LinkedIn</Link>
-            <Link>CV</Link>
+            <Link
+              href="https://github.com/AlexTran2001"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/tranvietanh2011/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </Link>
+            <Link
+              href="https://www.threads.com/@goodmorning.2001"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Threads
+            </Link>
           </Box>
         </Box>
       </Box>
+
+      <ContactModal open={open} handleClose={handleCloseContactModal} />
     </>
   );
 }
