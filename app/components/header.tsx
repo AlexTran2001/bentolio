@@ -55,24 +55,15 @@ export default function Header() {
         </Typography>
       </Link>
       <Box sx={{ display: isMobile ? "none" : "flex", gap: "50px" }}>
-        <Link href="/projects">Các dự án</Link>
-        <Link href="/about-me">Về tôi</Link>
-        <Link href="/contact">Liên hệ</Link>
+        <Link href="/cac-du-an">Các dự án</Link>
+        <Link href="/ve-toi">Về tôi</Link>
+        <Link href="/lien-he">Liên hệ</Link>
       </Box>
 
-      <Box sx={{ display: isMobile ? "flex" : "none" }}>
-        <MenuIcon sx={{ color: Color.white, fontSize: "30px" }} />
-      </Box>
-
-      <Box
-        sx={{
-          display: isMobile ? "flex" : "none",
-          position: "absolute",
-          right: 30,
-        }}
-      >
-        <MenuIcon onClick={() => setOpen(true)} />
-      </Box>
+      <MenuIcon
+        onClick={() => setOpen(true)}
+        sx={{ color: Color.black, display: isMobile ? "block" : "none" }}
+      />
       <Drawer
         anchor="right"
         open={open}
@@ -99,16 +90,16 @@ export default function Header() {
           alignItems={"center"}
           mt={10}
         >
-          <Link href="/projects" textAlign={"center"}>
+          <Link href="/cac-du-an" textAlign={"center"}>
             Các dự án
           </Link>
 
           <Divider sx={{ width: "90%" }} />
-          <Link href="/about-me" textAlign={"center"}>
+          <Link href="/ve-toi" textAlign={"center"}>
             Về tôi
           </Link>
           <Divider sx={{ width: "90%" }} />
-          <Link href="/contact" textAlign={"center"}>
+          <Link href="/lien-he" textAlign={"center"}>
             Liên hệ
           </Link>
           <img

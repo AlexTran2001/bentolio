@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { AboutMe } from "~/aboutme/aboutme";
+import { AboutMe } from "~/pages/aboutme/aboutme";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Alex Tran" },

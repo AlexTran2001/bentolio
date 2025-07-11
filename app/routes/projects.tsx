@@ -1,13 +1,12 @@
 import type { Route } from "./+types/home";
-import { Homepage } from "~/pages/homepage/homepage";
-
+import ProjectsComponent from "~/pages/projects/project";
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Alex Tran" },
+    { title: "Các dự án" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function Home() {
-  return <Homepage />;
+export default function Projects() {
+  return <ProjectsComponent />;
 }

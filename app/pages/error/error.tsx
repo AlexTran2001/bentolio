@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import ErrorImage from "../assets/error.gif";
+import ErrorImage from "~/assets/error.gif";
 export default function ErrorPage() {
   return (
     <Box

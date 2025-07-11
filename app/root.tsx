@@ -3,7 +3,7 @@ import "@fontsource/playfair-display";
 import "@fontsource/lato";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
-import ErrorPage from "./error/error";
+import ErrorPage from "./pages/error/error";
 import LayoutComponent from "./components/layout";
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
